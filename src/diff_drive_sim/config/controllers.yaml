@@ -1,0 +1,16 @@
+controller_manager:
+  ros__parameters:
+
+    update_rate: 50
+
+    pen_joint_controller:
+      type: position_controllers/JointPositionController
+
+    joint_state_broadcaster:
+      type: joint_state_broadcaster/JointStateBroadcaster
+
+
+pen_joint_controller:
+  ros__parameters:
+    joints:
+      - pen_joint

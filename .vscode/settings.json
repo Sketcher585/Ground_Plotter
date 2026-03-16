@@ -1,0 +1,12 @@
+{
+    "python.autoComplete.extraPaths": [
+        "/home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/python3.12/site-packages",
+        "/home/yashika-khandelwal/ros2_ws/install/diff_drive_sim/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ],
+    "python.analysis.extraPaths": [
+        "/home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/python3.12/site-packages",
+        "/home/yashika-khandelwal/ros2_ws/install/diff_drive_sim/lib/python3.12/site-packages",
+        "/opt/ros/jazzy/lib/python3.12/site-packages"
+    ]
+}

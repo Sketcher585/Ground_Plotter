@@ -1,0 +1,3 @@
+[console_scripts]
+drawing_node = diff_drive_sim.drawing_node:main
+plotter_controller = diff_drive_sim.plotter_controller:main
