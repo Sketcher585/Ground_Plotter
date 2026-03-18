@@ -1,0 +1,23 @@
+[0.881s] Invoking command in '/home/yashika-khandelwal/workspace_ros2/src/diff_drive_sim': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/yashika-khandelwal/workspace_ros2/build/diff_drive_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/diff_drive_sim build --build-base /home/yashika-khandelwal/workspace_ros2/build/diff_drive_sim/build install --record /home/yashika-khandelwal/workspace_ros2/build/diff_drive_sim/install.log --single-version-externally-managed install_data
+[1.178s] running egg_info
+[1.198s] writing ../../build/diff_drive_sim/diff_drive_sim.egg-info/PKG-INFO
+[1.199s] writing dependency_links to ../../build/diff_drive_sim/diff_drive_sim.egg-info/dependency_links.txt
+[1.199s] writing entry points to ../../build/diff_drive_sim/diff_drive_sim.egg-info/entry_points.txt
+[1.199s] writing requirements to ../../build/diff_drive_sim/diff_drive_sim.egg-info/requires.txt
+[1.199s] writing top-level names to ../../build/diff_drive_sim/diff_drive_sim.egg-info/top_level.txt
+[1.242s] reading manifest file '../../build/diff_drive_sim/diff_drive_sim.egg-info/SOURCES.txt'
+[1.243s] writing manifest file '../../build/diff_drive_sim/diff_drive_sim.egg-info/SOURCES.txt'
+[1.243s] running build
+[1.243s] running build_py
+[1.243s] running install
+[1.250s] running install_lib
+[1.272s] running install_data
+[1.273s] copying worlds/obstacles.sdf -> /home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/share/diff_drive_sim/worlds
+[1.273s] running install_egg_info
+[1.295s] removing '/home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/python3.12/site-packages/diff_drive_sim-0.0.0-py3.12.egg-info' (and everything under it)
+[1.296s] Copying ../../build/diff_drive_sim/diff_drive_sim.egg-info to /home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/python3.12/site-packages/diff_drive_sim-0.0.0-py3.12.egg-info
+[1.296s] running install_scripts
+[1.438s] Installing drawing_node script to /home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/diff_drive_sim
+[1.439s] Installing plotter_controller script to /home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/diff_drive_sim
+[1.439s] writing list of installed files to '/home/yashika-khandelwal/workspace_ros2/build/diff_drive_sim/install.log'
+[1.470s] Invoked command in '/home/yashika-khandelwal/workspace_ros2/src/diff_drive_sim' returned '0': DEBUGINFOD_URLS=https://debuginfod.ubuntu.com PYTHONPATH=/home/yashika-khandelwal/workspace_ros2/build/diff_drive_sim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/home/yashika-khandelwal/workspace_ros2/install/diff_drive_sim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../../build/diff_drive_sim build --build-base /home/yashika-khandelwal/workspace_ros2/build/diff_drive_sim/build install --record /home/yashika-khandelwal/workspace_ros2/build/diff_drive_sim/install.log --single-version-externally-managed install_data

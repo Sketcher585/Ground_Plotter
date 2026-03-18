@@ -96,12 +96,6 @@ def generate_launch_description():
             arguments=["pen_joint_controller"],
         ),
         
-        Node(
-            package="diff_drive_sim",
-            executable="plotter_controller",
-            name="plotter",
-        ),
-
         # Here is the added drawing node!
         Node(
             package="diff_drive_sim",

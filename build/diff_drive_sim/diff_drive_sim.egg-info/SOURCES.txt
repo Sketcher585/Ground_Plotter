@@ -9,6 +9,7 @@ setup.py
 ../../build/diff_drive_sim/diff_drive_sim.egg-info/top_level.txt
 ../../build/diff_drive_sim/diff_drive_sim.egg-info/zip-safe
 config/controllers.yaml
+config/plotter_nav2_params.yaml
 config/ros_gz_bridge.yaml
 description/diff_drive.xacro
 description/include.xacro
@@ -17,6 +18,7 @@ diff_drive_sim/__init__.py
 diff_drive_sim/drawing_node.py
 diff_drive_sim/plotter_controller.py
 launch/my_robot_gazebo.launch.py
+launch/plotter_navigation.launch.py
 resource/diff_drive_sim
 test/test_copyright.py
 test/test_flake8.py

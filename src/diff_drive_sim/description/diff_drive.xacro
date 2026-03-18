@@ -82,7 +82,6 @@
         </xacro:inertial_sphere>
     </link>
 
-    <!-- Pen link -->
     <link name="pen_link">
         <visual>
             <geometry>
@@ -103,7 +102,23 @@
         </xacro:inertial_cylinder>
 
     </link>
-    
+
+    <link name='laser_frame'>
+        <visual>
+            <geometry>
+                <cylinder length="0.05" radius="0.2"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+        <collision name='collision'>
+            <geometry>
+                <cylinder length="0.05" radius="0.2"/>
+            </geometry>
+        </collision>
+        <xacro:inertial_cylinder mass="2.0" length="0.05" radius="0.2">
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+        </xacro:inertial_cylinder>
+    </link>
 
     <!-- Joints -->
     <joint name="chassis_joint" type="fixed">
@@ -132,7 +147,6 @@
         <child link="caster_wheel"/>
     </joint>
 
-    <!-- Pen lift joint -->
     <joint name="pen_joint" type="prismatic">
         <parent link="chassis"/>
         <child link="pen_link"/>
@@ -148,51 +162,12 @@
            velocity="0.1"/>
     </joint>
 
-   <!-- <joint name="rod_left_joint" type="revolute">
+    <joint name="laser_joint" type="fixed">
+        <origin xyz ="0.1 0 0.27" rpy="0 0 0"/>
         <parent link="chassis"/>
-        <child link="rod_left"/>
-        <origin xyz="0.3 0.2 0" rpy="0 1.57 0"/>
-        <axis xyz="0 1 0"/>
-        <limit lower="-0.8" upper="0.8" effort="5" velocity="1"/>
+        <child link="laser_frame"/>
     </joint>
 
-
-    <joint name="rod_right_joint" type="revolute">
-        <parent link="chassis"/>
-        <child link="rod_right"/>
-        <origin xyz="0.3 -0.2 0" rpy="0 1.57 0"/>
-        <axis xyz="0 1 0"/>
-        <limit lower="-0.8" upper="0.8" effort="5" velocity="1"/>
-    </joint>
-
-    <joint name="rod_left_pen_joint" type="revolute">
-        <parent link="rod_left"/>
-        <child link="pen_holder"/>
-        <origin xyz="0 0 -0.5"/>
-        <axis xyz="0 1 0"/>
-    </joint>
-
-
-    <joint name="rod_right_pen_joint" type="revolute">
-        <parent link="rod_right"/>
-        <child link="pen_holder"/>
-        <origin xyz="0 0 -0.5"/>
-        <axis xyz="0 1 0"/>
-    </joint>
-
-    <joint name="pen_tip_joint" type="fixed">
-        <parent link="pen_holder"/>
-        <child link="pen_tip"/>
-        <origin xyz="0 0 -0.2"/>
-    </joint> 
-    -->
-
-    <!--
-    Friction Coefficients of links
-        - High friction for wheels to prevent slipping
-        - Low friction for caster wheel to allow slipping
-          (since caster joint is fixed and not pivoted)
-    -->
     <gazebo reference="left_wheel">
         <mu1>0.9</mu1>
         <mu2>0.9</mu2>
@@ -214,7 +189,8 @@
         <plugin filename="gz-sim-diff-drive-system" name="gz::sim::systems::DiffDrive">
             <left_joint>left_wheel_joint</left_joint>   
             <right_joint>right_wheel_joint</right_joint> 
-            <wheel_separation>1.2</wheel_separation>  <wheel_radius>0.4</wheel_radius>           
+            <wheel_separation>1.2</wheel_separation>     
+            <wheel_radius>0.4</wheel_radius>             
             <odom_publish_frequency>50</odom_publish_frequency>
             <topic>/cmd_vel</topic>
         </plugin>
@@ -243,6 +219,33 @@
                 <diffuse>0.2 0.2 0.2 1.0</diffuse>
             </material>
         </visual>
+    </gazebo>
+    
+    <gazebo reference="laser_frame">
+        <sensor name="laser" type="gpu_lidar">
+            <pose> 0 0 0 0 0 0 </pose>
+            <visualize>false</visualize>
+            <update_rate>10</update_rate>
+            
+            <topic>/scan</topic>
+            <gz_frame_id>laser_frame</gz_frame_id>
+            
+            <ray>
+                <scan>
+                    <horizontal>
+                        <samples>360</samples>
+                        <resolution>1</resolution>
+                        <min_angle>-3.14</min_angle>
+                        <max_angle>3.14</max_angle>
+                    </horizontal>
+                </scan>
+                <range>
+                    <min>0.3</min>
+                    <max>12</max>
+                    <resolution>0.01</resolution>
+                </range>
+            </ray>
+        </sensor>
     </gazebo>
 
     <ros2_control name="GazeboSystem" type="system">

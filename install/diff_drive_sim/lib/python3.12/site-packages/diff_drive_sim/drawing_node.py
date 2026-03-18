@@ -54,7 +54,7 @@ class DrawingNode(Node):
 
         dist = math.sqrt((x-self.last_x)**2 + (y-self.last_y)**2)
 
-        if dist < 0.1:
+        if dist < 0.01:
             return
 
         if self.pen_down:
