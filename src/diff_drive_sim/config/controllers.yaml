@@ -1,16 +1,28 @@
 controller_manager:
   ros__parameters:
-
     update_rate: 50
-
-    pen_joint_controller:
-      type: position_controllers/JointPositionController
 
     joint_state_broadcaster:
       type: joint_state_broadcaster/JointStateBroadcaster
 
+    pen_joint_controller:
+      type: position_controllers/JointGroupPositionController
+
+    diff_drive_controller:
+      type: diff_drive_controller/DiffDriveController
 
 pen_joint_controller:
   ros__parameters:
     joints:
       - pen_joint
+
+diff_drive_controller:
+  ros__parameters:S
+    left_wheel_names: ["left_wheel_joint"]
+    right_wheel_names: ["right_wheel_joint"]
+
+    wheel_separation: 1.0
+    wheel_radius: 0.4
+
+    publish_rate: 50
+    use_stamped_vel: false

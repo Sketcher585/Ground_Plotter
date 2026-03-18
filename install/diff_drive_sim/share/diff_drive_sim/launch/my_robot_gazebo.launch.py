@@ -69,6 +69,7 @@ def generate_launch_description():
         output='screen'
     )
 
+    # Make sure this return statement is indented exactly 4 spaces!
     return LaunchDescription([
         robot_state_publisher_node,
         launch_gazebo,
@@ -94,6 +95,23 @@ def generate_launch_description():
             executable="spawner",
             arguments=["pen_joint_controller"],
         ),
+        
+        Node(
+            package="diff_drive_sim",
+            executable="plotter_controller",
+            name="plotter",
+        ),
+
+        # Here is the added drawing node!
+        Node(
+            package="diff_drive_sim",
+            executable="drawing_node", 
+            name="drawing_node",
+            output="screen"
+        ),
 
         ros_gz_bridge,
     ])
+        
+        
+        
